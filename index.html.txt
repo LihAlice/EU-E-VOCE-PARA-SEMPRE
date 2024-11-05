@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Tempo Juntos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nosso Tempo Juntos</h1>
+        <div class="photos">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <!-- Adicione mais fotos conforme necessário -->
+        </div>
+        <p class="message">Sem dúvidas ter te conhecido foi uma das melhores coisas que já me aconteceram. Estar ao seu lado é sem dúvidas uma das sensações mais confortantes da vida, uma mistura de sentimentos, dos melhores sentimentos.</p>
+        <div class="timer">
+            <p>Estamos juntos há:</p>
+            <p id="timeTogether"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
