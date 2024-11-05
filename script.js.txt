@@ -1,20 +1,26 @@
-function updateTimeTogether() {
-    const startDate = new Date('2022-08-11'); // Coloque a data de início do relacionamento aqui
-    const now = new Date();
-    const diff = now - startDate;
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.carousel-image');
+    let currentImageIndex = 0;
 
-    const minutes = Math.floor(diff / (1000 * 60));
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const years = Math.floor(days / 365);
+    function showNextImage() {
+        images[currentImageIndex].classList.remove('active');
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        images[currentImageIndex].classList.add('active');
+    }
 
-    const displayYears = years > 0 ? `${years} anos, ` : '';
-    const displayDays = `${days % 365} dias, `;
-    const displayHours = `${hours % 24} horas, `;
-    const displayMinutes = ${minutes % 60} minutos;
+    setInterval(showNextImage, 5000); // Muda a cada 5 segundos
 
-    document.getElementById('timeTogether').innerText = displayYears + displayDays + displayHours + displayMinutes;
-}
+    function updateTimeTogether() {
+        const startDate = new Date('2022-08-11'); // Substitua pela data de início do relacionamento
+        const now = new Date();
+        const diff = now - startDate;
 
-updateTimeTogether();
-setInterval(updateTimeTogether, 60000); // Atualiza a cada minuto
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const years = Math.floor(days / 365);
+        const displayYears = ${years} anos;
+
+        document.getElementById('timeTogether').innerText = displayYears;
+    }
+
+    updateTimeTogether();
+});
